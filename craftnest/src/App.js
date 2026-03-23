@@ -5,9 +5,10 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import {BrowserRouter as Router ,Routes,Route,Link} from 'react-router-dom'
 import AddProducts from './components/AddProducts';
 import SignIn from './components/SignIn';
-import GetProducts from './components/GetProducts';
+import GetProducts from './components/GetProducts'
 import MpesaPayment from './components/MpesaPayment';
 import SignUp from './components/SignUp';
+import AboutUs from './components/AboutUs';
 
 
 
@@ -21,19 +22,36 @@ function App() {
 
       </header>
 
-      <nav>
-        <Link to="/signin" className='btn btn-info m-2'>Sign In</Link>
-        <Link to="/signup" className='btn btn-info m-2'>Sign Up</Link>
-        <Link to="/" className='btn btn-info m-2'>Get Products</Link>
-        <Link to="/addproducts" className='btn btn-info m-2'>Add Products</Link>
-      </nav>
+      <nav class="navbar bg-muted navbar-light navbar-expand-md sticky-top">
+                  <Link class="navbar-brand"></Link>
+                <button
+                class="navbar-toggler"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarcollapse"
+                >
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarcollapse">
+                    <div class="navbar-nav">
+                      <Link className='nav-link 'to='/' id='home'><b>Craftnest</b></Link>
+                      <Link className='nav-link'to='/signup' >signup</Link>
+                      <Link className='nav-link'to='/signin' >Signin</Link>
+                      <Link className='nav-link'to='/addproducts'>Add products</Link>
+                      <Link className='nav-link 'to='/aboutus'  >About Us</Link>
+                      
+                    </div> 
+                </div>
+            </nav>
 
+           
+          
      <Routes>
       <Route path='/signup'element={<SignUp/>}/>
       <Route path='/signin'element={<SignIn/>}/>
       <Route path='/addproducts'element={<AddProducts/>}/>
-      <Route path='/'element={<GetProducts/>}/>
-      <Route path='/mpesapayment'element={<MpesaPayment/>}/>
+      <Route path='/' element={<GetProducts/>}/>
+      <Route path='/mpesa'element={<MpesaPayment/>}/>
+      <Route path='/aboutus'element={<AboutUs/>}/>
       
 
 

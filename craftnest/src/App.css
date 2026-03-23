@@ -35,7 +35,15 @@
   transform:scale(1.2) ;
   transition: 2s;
 }
-
+.about:hover{
+  transform:scale(1.2) ;
+  transition: 2s;
+  
+  
+}
+.about{
+  border-radius: 10%;
+}
 
 .App-link {
   color: #61dafb;
@@ -48,4 +56,11 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+#home{
+  font-size: larger;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  color: #2a225a;
+  text-decoration: overline;
 }

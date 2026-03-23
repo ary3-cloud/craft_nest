@@ -10,8 +10,13 @@ const GetProducts = () => {
 const [loading,setLoading]=useState("")
 const [error,setError]=useState("")
 const [products,setProducts]=useState([])
-const navigate=useNavigate()
+const[search,setSearch]=useState("")
 
+const filteredProducts =products.filter((product)=>
+  product.product_name.toLowerCase().includes(search.toLocaleLowerCase())
+)
+
+const navigate=useNavigate()
 
 //a variable to store our images
 const img_url="http://mary.alwaysdata.net/static/images/"
@@ -54,13 +59,19 @@ useEffect(()=>{
 
   return (
     <div className='row'>
-      <h1>Available Products</h1>
+      <h1 className='text-info'>Available Products</h1>
+
+    <div className='row justify-content-center'>
+       <div className='col-md-6 '>
+       <input type="text" placeholder='search products'className='form-control card-shadow' value={search}onChange={(e)=>setSearch(e.target.value)}/>
+       </div>
+     </div>
 
       <p className='text-warning'>{loading}</p>
       <p className='text-danger'>{error}</p>
 
 {/* mapping through the products */}
-    {products.map((product)=>(
+    {filteredProducts.map((product)=>(
 
      
       
