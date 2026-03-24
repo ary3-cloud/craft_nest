@@ -10,6 +10,7 @@ import MpesaPayment from './components/MpesaPayment';
 import SignUp from './components/SignUp';
 import AboutUs from './components/AboutUs';
 import Footer from './components/Footer';
+import HomePage from './components/HomePage';
 
 
 
@@ -39,7 +40,7 @@ function App() {
                 <div class="collapse navbar-collapse" id="navbarcollapse">
                     <div class="navbar-nav">
                       <Link className='nav-link 'to='/' id='home'><b>Craftnest</b></Link>
-                      
+                      <Link className='nav-link'to="/homepage"><b>Home</b></Link>
                       <Link className='nav-link'to='/signup' >signup</Link>
                       <Link className='nav-link'to='/signin' >Signin</Link>
                       <Link className='nav-link'to='/addproducts'>Add products</Link>
@@ -58,7 +59,7 @@ function App() {
       <Route path='/' element={<GetProducts/>}/>
       <Route path='/mpesa'element={<MpesaPayment/>}/>
       <Route path='/aboutus'element={<AboutUs/>}/>
-    
+      <Route path='/homepage'element={<HomePage/>}/>
     
 
 
